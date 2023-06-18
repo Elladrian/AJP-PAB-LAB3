@@ -13,13 +13,13 @@ using System.Diagnostics;
 
 namespace WinFormsApp1.Shared
 {
-    public class CSVContext : IDisposable
+    public class CSVService : IDisposable
     {
         static List<Kody> importedKody = new();
 
         public List<Kody> ImportedKody { get { return importedKody; } }
 
-        public CSVContext()
+        public CSVService()
         {
             importCSV();
         }
