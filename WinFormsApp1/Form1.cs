@@ -10,7 +10,8 @@ namespace WinFormsApp1
 {
     public partial class Form1 : Form
     {
-        static string connectionString = @"Server=LOCALHOST\LOCALDATABASE;Database=AJPPABLAB3;User ID=Administrator;Password=cisco123!L;Encrypt=False;TrustServerCertificate=True";
+        //static string connectionString = @"Server=LOCALHOST\LOCALDATABASE;Database=AJPPABLAB3;User ID=Administrator;Password=cisco123!L;Encrypt=False;TrustServerCertificate=True";
+        static string connectionString = @"Server=GORWPC0008\SQLDEVELOPER;Database=AJPPABLAB3;User ID=Administrator;Password=cisco123!L;TrustServerCertificate=True;Encrypt=False";
         public Form1()
         {
             InitializeComponent();
@@ -18,7 +19,7 @@ namespace WinFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //AddCSVDataToDatabase();
+            AddCSVDataToDatabase();
             fillKodyDataGridView();
         }
 
@@ -89,27 +90,27 @@ namespace WinFormsApp1
                     {
                         result = result.Where(kod => kod.Id.ToString().ToLower().Contains(id.ToLower())).ToList();
                     }
-                    if(miejscowosc != null)
+                    if (miejscowosc != null)
                     {
                         result = result.Where(kod => kod.Miejscowosc.ToLower().Contains(miejscowosc.ToLower())).ToList();
                     }
-                    if(powiat != null)
+                    if (powiat != null)
                     {
                         result = result.Where(kod => kod.Powiat.ToLower().Contains(powiat.ToLower())).ToList();
                     }
-                    if(adres != null)
+                    if (adres != null)
                     {
                         result = result.Where(kod => kod.Adres.ToLower().Contains(adres.ToLower())).ToList();
                     }
-                    if(kodPocztowy != null)
+                    if (kodPocztowy != null)
                     {
                         result = result.Where(kod => kod.KodPocztowy.ToLower().Contains(kodPocztowy.ToLower())).ToList();
                     }
-                    if(wojewodztwo != null)
+                    if (wojewodztwo != null)
                     {
                         result = result.Where(kod => kod.Wojewodztwo.ToLower().Contains(wojewodztwo.ToLower())).ToList();
                     }
-                    if(result.Count < 0)
+                    if (result.Count < 0)
                     {
                         throw new Exception("Nothing Found");
                     }
@@ -119,7 +120,7 @@ namespace WinFormsApp1
                 resultDataGridView.DataSource = result;
                 MessageBox.Show($"Search Result: {result.Count} items \nIn time: {stopwatch.Elapsed}");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Occured error {ex.Message}");
             }
@@ -158,11 +159,11 @@ namespace WinFormsApp1
 
                     if (id != null)
                     {
-                         filtr += $"(CONVERT(Id, System.String) LIKE '%{id}%')";
+                        filtr += $"(CONVERT(Id, System.String) LIKE '%{id}%')";
                     }
                     if (miejscowosc != null)
                     {
-                         filtr += (filtr.Length > 0 ? $" AND (Miejscowosc LIKE '%{miejscowosc}%')" : $"(Miejscowosc LIKE '%{miejscowosc}%')");
+                        filtr += (filtr.Length > 0 ? $" AND (Miejscowosc LIKE '%{miejscowosc}%')" : $"(Miejscowosc LIKE '%{miejscowosc}%')");
                     }
                     if (powiat != null)
                     {
@@ -225,7 +226,7 @@ namespace WinFormsApp1
                 resultDataGridView.DataSource = result;
                 MessageBox.Show($"Search Result: {result.Count()} items \nIn time: {stopwatch.Elapsed}");
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Occured error: {ex.Message}");
             }

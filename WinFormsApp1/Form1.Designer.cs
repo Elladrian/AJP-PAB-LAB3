@@ -59,8 +59,8 @@
             efSearchButton = new Button();
             label1 = new Label();
             label2 = new Label();
-            adonetSearchButton = new Button();
             dapperSearchButton = new Button();
+            adonetSearchButton = new Button();
             ((System.ComponentModel.ISupportInitialize)kodyDataGridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)kodyPocztoweBindingSource).BeginInit();
             ((System.ComponentModel.ISupportInitialize)resultDataGridView).BeginInit();
@@ -309,16 +309,6 @@
             label2.Text = "Search Result";
             label2.Click += label2_Click;
             // 
-            // adonetSearchButton
-            // 
-            adonetSearchButton.Location = new Point(1124, 101);
-            adonetSearchButton.Name = "adonetSearchButton";
-            adonetSearchButton.Size = new Size(183, 23);
-            adonetSearchButton.TabIndex = 17;
-            adonetSearchButton.Text = "Search (ADO.NET)";
-            adonetSearchButton.UseVisualStyleBackColor = true;
-            adonetSearchButton.Click += adonetSearchButton_Click;
-            // 
             // dapperSearchButton
             // 
             dapperSearchButton.Location = new Point(1124, 156);
@@ -328,6 +318,16 @@
             dapperSearchButton.Text = "Search (Dapper)";
             dapperSearchButton.UseVisualStyleBackColor = true;
             dapperSearchButton.Click += dapperSearchButton_Click;
+            // 
+            // adonetSearchButton
+            // 
+            adonetSearchButton.Location = new Point(1124, 101);
+            adonetSearchButton.Name = "adonetSearchButton";
+            adonetSearchButton.Size = new Size(183, 23);
+            adonetSearchButton.TabIndex = 17;
+            adonetSearchButton.Text = "Search (ADO.NET)";
+            adonetSearchButton.UseVisualStyleBackColor = true;
+            adonetSearchButton.Click += adonetSearchButton_Click;
             // 
             // Form1
             // 
@@ -395,7 +395,7 @@
         private Button efSearchButton;
         private Label label1;
         private Label label2;
-        private Button adonetSearchButton;
         private Button dapperSearchButton;
+        private Button adonetSearchButton;
     }
 }

@@ -18,7 +18,7 @@ public partial class Ajppablab3Context : DbContext
     public virtual DbSet<KodyPocztowe> KodyPocztowes { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=LOCALHOST\\LOCALDATABASE;Database=AJPPABLAB3;User ID=Administrator;Password=cisco123!L;Encrypt=False;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=GORWPC0008\\SQLDEVELOPER;Database=AJPPABLAB3;User ID=Administrator;Password=cisco123!L;TrustServerCertificate=True;Encrypt=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
